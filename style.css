@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Chewy|Hanalei|Hanalei+Fill');
+
+/* ***** background ***** */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('img/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.landscape {
+  visibility: hidden;
+  z-index: 1;
+  position: absolute;
+}
+
+/* ***** status panel ***** */
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 0 0 10vh 0;
+  float: left;
+  position: absolute;
+  text-align: center;
+}
+
+.logo {
+  width: 100%;
+  margin: 5% auto;
+}
+
+.status {
+  width: 50%;
+  height: 45%;
+  border: 1vh solid rgb(255, 204, 82);
+  border-radius: 3vh;
+  display: inline-block;
+  margin: 1% 6%;
+  padding: 5%;
+  background-color: white;
+  font-family: 'Chewy', cursive;
+  font-size: 1.5vw;
+}
+
+.status p, .status ul {
+  margin-top: 8%;
+}
+
+.stars {
+  list-style: none;
+  display: inline-flex;
+  color: rgb(255, 204, 82);
+}
+
+.grayscale { /* add to stars according to moves count */
+  filter: grayscale(100%);
+}
+
+.font-red {
+  color: red;
+}
+
+.replay {
+  font-family: 'Chewy', cursive;
+  width: 28%;
+  height: 7%;
+  font-size: 1.5vw;
+  margin: 2%;
+  padding: 2%;
+  background-color: rgb(255, 204, 82);
+  border-style: none;
+  border-radius: 3vh;
+  display: block;
+  position: relative;
+  top: 3%;
+  left: 33%;
+}
+
+.replay:hover {
+  cursor: pointer;
+}
+
+.replay:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+/* ***** game board ***** */
+.gameboard {
+  width: 54%;
+  height: 50%;
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  float: right;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 15%;
+  height: 42%;
+  margin: 0.5%;
+  padding: 0;
+  position: relative;
+  -webkit-transition: all .4s linear;
+  -webkit-transform-style: preserve-3d;
+  transition: all .4s linear;
+  transform-style: preserve-3d;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 1vh;
+}
+
+.back, .front {
+  position: absolute;
+}
+
+.front {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.clicked {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.matched {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/* ***** game over modal ***** */
+.gameover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.gameover > img {
+  width: 100%;
+  border-radius: 20vh;
+}
+
+/* ***** media query ***** */
+@media (max-width: 450px) and (orientation: portrait) {
+  .landscape{
+    visibility: visible !important;
+  }
+  .landscape img {
+    width: 100vw;
+    height: 100vh;
+  }
+  .startpage, .panel, .gameboard, .gameover {
+    display: none !important;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 768px)  and (orientation: portrait) {
+  .landscape{
+    visibility: visible !important;
+  }
+  .landscape img {
+    width: 100vw;
+    height: 100vh;
+  }
+  .startpage, .panel, .gameboard, .gameover {
+    display: none !important;
+  }
+}
+
+@media (max-width: 750px) and (orientation: landscape) {
+  body {
+    width: 95vw;
+    overflow: hidden;
+  }
+}
+
+@media (min-width:751px) and (max-width: 1024px) and (orientation: landscape) {
+  body {
+    width: 95vw;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The Simpsons Memory Match Game</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" href="Style.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <!-- landscape mode -->
+  <div class="landscape"><img src="img/landscape.png"/></div>
+
+  <!-- status panel -->
+  <div class="panel">
+    <img class="logo" src="img/logo.png"/>
+    <div class="status">
+      <p>Ratings</p>
+    	<ul class="stars">
+    		<li><i class="fa fa-star star"></i></li>
+    		<li><i class="fa fa-star star"></i></li>
+    		<li><i class="fa fa-star star"></i></li>
+    	</ul>
+
+    	<p>Moves</p>
+      <p><span class="moves font-red">0</span></p>
+
+      <p>Matches</p>
+      <p><span class="matches font-red">0</span> / 12</p>
+    </div>
+
+    <button type="button" class="replay" onclick="replay()"><i class="fa fa-repeat"></i>REPLAY</button>
+
+    </div>
+  </div>
+
+  <!-- game board -->
+  <div class="gameboard">
+    <!-- dynamically create cards in js -->
+  </div>
+
+  <!-- game over modal -->
+  <div class="gameover"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
