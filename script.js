@@ -87,8 +87,8 @@ const matchesDisplay = document.querySelector('.matches');
 const movesDisplay = document.querySelector('.moves');
 
 gameboard.addEventListener('click', function(){
-  let clicked = event.target;
-  let card = clicked.parentNode;
+  const clicked = event.target;
+  const card = clicked.parentNode;
 
   if(clicked.className === 'gameboard' || count !== 0 && clicked === prevCard || card.classList.contains('matched')) { return; }
 
@@ -98,11 +98,11 @@ gameboard.addEventListener('click', function(){
     if(count === 1){
       firstCard = card.dataset.name;
       console.log(`firstCard=>${firstCard}`);
-      clicked.parentNode.classList.add('clicked');
+      card.childNodes[1].classList.add('clicked');
     } else {
       secondCard = card.dataset.name;
       console.log(`secondCard=>${secondCard}`);
-      card.classList.add('clicked');
+      card.childNodes[1].classList.add('clicked');
     }
 
     if(firstCard !== '' && secondCard !== ''){
@@ -146,8 +146,19 @@ const match = () => {
   matchesDisplay.innerHTML = matches;
 
   let matchedCards = document.querySelectorAll('.clicked');
+  console.log(matchedCards);
   matchedCards.forEach((card) => {
+    card.parentNode.childNodes[0].classList.add('invisible');
     card.classList.add('matched');
+  })
+
+  bounce();
+}
+
+const bounce = () => {
+  let matchedCards = document.querySelectorAll('.matched');
+  matchedCards.forEach((card) => {
+    card.classList.add('bounce');
   })
 }
 
