@@ -90,7 +90,7 @@ gameboard.addEventListener('click', function(){
   const clicked = event.target;
   const card = clicked.parentNode;
 
-  if(clicked.className === 'gameboard' || count !== 0 && clicked === prevCard || card.classList.contains('matched')) { return; }
+  if(clicked.className === 'gameboard' || count !== 0 && clicked === prevCard || card.childNodes[1].classList.contains('matched')) { return; }
 
   if(count < 2){
     count++;
