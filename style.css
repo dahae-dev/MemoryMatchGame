@@ -113,7 +113,7 @@ body {
 .card {
   width: 15%;
   height: 42%;
-  margin: 0.5%;
+  margin: 0 0.5% 2% 0.5%;
   padding: 0;
   position: relative;
   -webkit-transition: all .4s linear;
@@ -139,6 +139,7 @@ body {
 .clicked {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  backface-visibility: visible;
 }
 
 .matched {
